@@ -1,0 +1,165 @@
+﻿<Window x:Class="FinalADO.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FinalADO"
+        mc:Ignorable="d"
+        Loaded="Window_Loaded"
+        Closed="Window_Closed"
+        Title="MainWindow" Height="650" Width="1000">
+    <Grid ShowGridLines="True">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Label Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2"
+                   Content="Справочник" FontSize="25" FontWeight="DemiBold"
+                   HorizontalAlignment="Center"/>
+            <Label Grid.Column="0" Grid.Row="1" FontSize="15"
+                   Content="Подключение" />
+            <Label Grid.Column="1" Grid.Row="1"
+                   x:Name="MonitorConnection" FontSize="15"/>
+            <Label Grid.Column="0" Grid.Row="2"
+                   Content="Количество всей криптовалюты" FontSize="15"/>
+            <Label Grid.Column="1" Grid.Row="2"
+                   x:Name="MonitorCryptoCount" FontSize="15"/>
+            <Label Grid.Column="0" Grid.Row="3"
+                   Content="Число инвесторов" FontSize="15"/>
+            <Label Grid.Column="1" Grid.Row="3"
+                   x:Name="MonitorInvestors" FontSize="15"/>
+            <Label Grid.Column="0" Grid.Row="4"
+                   Content="Число транзакций" FontSize="15"/>
+            <Label Grid.Column="1" Grid.Row="4"
+                   x:Name="MonitorTranzactionsCount" FontSize="15"/>
+            <Label Grid.Column="0" Grid.Row="5"
+                   Content="Всего денег в обороте" FontSize="15"/>
+            <Label Grid.Column="1" Grid.Row="5"
+                   x:Name="MonitorMoneyCount" FontSize="15"/>
+        </Grid>
+
+        <Grid Grid.Column="1" Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Label Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2"
+                   Content="Криптовалюта" 
+                   FontSize="25" FontWeight="DemiBold"
+                   HorizontalAlignment="Center"/>
+            <TextBlock x:Name="CrytoInfo"/>
+            <Label Grid.Column="0" Grid.Row="1"
+                   Content="Название криптовалюты" FontSize="15" />
+            <Label Grid.Column="1" Grid.Row="1"
+                   x:Name="CryptoName" FontSize="15"/>
+            <Label Grid.Column="0" Grid.Row="2"
+                   Content="Количество этой криптовалюты" FontSize="15"/>
+            <Label Grid.Column="1" Grid.Row="2"
+                   x:Name="CryptoCount" FontSize="15"/>
+            <Label Grid.Column="0" Grid.Row="3"
+                   Content="Главный инвестор" FontSize="15"/>
+            <Label Grid.Column="1" Grid.Row="3"
+                   x:Name="CryptoInvestorName" FontSize="15"/>
+            <Label Grid.Column="0" Grid.Row="4"
+                   Content="Самая популярная транзакция" FontSize="15"/>
+            <Label Grid.Column="1" Grid.Row="4"
+                   x:Name="CryptoTrans" FontSize="15"/>
+            <Label Grid.Column="0" Grid.Row="5"
+                   Content="Цена" FontSize="15"/>
+            <Label Grid.Column="1" Grid.Row="5"
+                   x:Name="CryptoPrice" FontSize="15"/>
+            <Label Grid.Column="0" Grid.Row="6"
+                   Content="Процент прироста-падения" FontSize="15"/>
+            <Label Grid.Column="1" Grid.Row="6"
+                   x:Name="CryptoBenefit" FontSize="15"/>
+        </Grid>
+
+        <Grid Grid.Column="0" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Label Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2"
+                   Content="Инвесторы" 
+                   FontSize="25" FontWeight="DemiBold"
+                   HorizontalAlignment="Center"/>
+            <TextBlock x:Name="IvestInfo"/>
+            <Label Grid.Column="0" Grid.Row="1"
+                   Content="Инвесторы" FontSize="15"/>
+            <Label Grid.Column="1" Grid.Row="1"
+                   x:Name="InvestorName" FontSize="15"/>
+            <Label Grid.Column="0" Grid.Row="2"
+                   Content="Их состояние" FontSize="15"/>
+            <Label Grid.Column="1" Grid.Row="2"
+                   x:Name="InvestorValue" FontSize="15"/>
+            <Label Grid.Column="0" Grid.Row="3"
+                   Content="Цена их состояния" FontSize="15"/>
+            <Label Grid.Column="1" Grid.Row="3"
+                   x:Name="InvestorsPriceValue" FontSize="15"/>
+        </Grid>
+
+        <Grid Grid.Column="1" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Label Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2"
+                   Content="Транзакции" 
+                   FontSize="25" FontWeight="DemiBold"
+                   HorizontalAlignment="Center"/>
+            <TextBlock x:Name="TransInfo"/>
+            <Label Grid.Column="0" Grid.Row="1"
+                   Content="Тип транзакции" FontSize="15"/>
+            <Label Grid.Column="1" Grid.Row="1"
+                   x:Name="TransType" FontSize="15"/>
+            <Label Grid.Column="0" Grid.Row="2"
+                   Content="Дата" FontSize="15"/>
+            <Label Grid.Column="1" Grid.Row="2"
+                   x:Name="Date" FontSize="15"/>
+            <Label Grid.Column="0" Grid.Row="3"
+                   Content="Сумма транзакции" FontSize="15"/>
+            <Label Grid.Column="1" Grid.Row="3"
+                   x:Name="TranSum" FontSize="15"/>
+        </Grid>
+
+    </Grid>
+</Window>
